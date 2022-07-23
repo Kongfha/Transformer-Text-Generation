@@ -1,3 +1,4 @@
 tensorflow==2.0.0
 numpy==1.19.2
 pickle== 0.7.5
+streamlit==1.11.0
