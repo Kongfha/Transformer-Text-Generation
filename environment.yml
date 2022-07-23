@@ -1,0 +1,7 @@
+channles:
+  - conda-forge
+dependencies:
+  - tensorflow==2.0.0
+  - numpy==1.19.2
+  - pickle
+  - streamlit==1.11.0
