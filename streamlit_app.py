@@ -16,7 +16,7 @@ input_vocab = 3102
 output_vocab = 4034
 
 #st.write("Tokenizer Importing Finished.")
-
+st.write(os.getcwd())
 def get_angles(pos, i, d_model):
   angle_rates = 1 / np.power(10000, (2 * (i//2)) / np.float32(d_model))
   return pos * angle_rates
