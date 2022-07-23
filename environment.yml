@@ -1,4 +1,4 @@
-channles:
+channels:
   - conda-forge
 dependencies:
   - tensorflow==2.0.0
