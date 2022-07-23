@@ -341,7 +341,7 @@ transformer = Transformer(
     rate=dropout_rate)
 
 ckpt = tf.train.Checkpoint(transformer=transformer)
-ckpt.restore("/checkpoint/ckpt-3")
+ckpt.restore("/Transformer-Text-Generation/checkpoint/ckpt-3")
 
 #st.write("Checkpoint Recalling Finished.")
 
