@@ -7,7 +7,7 @@ import pickle
 import os
 
 #os.environ['KMP_DUPLICATE_LIB_OK']='True'
-#st.header("Novel Generation by Transformer")
+st.header("Novel Generation by Transformer")
 #st.write("System Initialize (may take a several time)")
 
 inp_tokenizer = pickle.load(open('inp_tokenizer','rb'))
