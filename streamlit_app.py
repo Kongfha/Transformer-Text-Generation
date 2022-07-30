@@ -440,9 +440,12 @@ input_text = st.text_input("Enter Initial text","")
 strlength = st.text_input("Please input times of the model to run (1 or 2 is recommended)","")
 if st.button('Generate'):
   length = int(strlength)
-  st.write("Caution : Generation may take a minute (can be up to 1-2 minutes)")
-  st.write("Generating... ")
+  placeholder = st.empty()
+  disclaimer = "Disclaimer : Generation may take a minute (can be up to 1-2 minutes) "
+  dis_style = '<p style="font-family:"Times New Roman"; font-size: 14px;">' + disclaimer + '</p>' + '<p style="font-family:"Times New Roman"; font-size: 14px;">' + "Generating..." + '</p>'
+  placeholder.markdown(dis_style, unsafe_allow_html=True)
   output = Generate(input_text, length)
+  placeholder.empty()
   st.write("Finished.")
   st.write("Result:")
   output_Text = '<p style="font-family:"Times New Roman"; font-size: 14px;">' + output + '</p>'
