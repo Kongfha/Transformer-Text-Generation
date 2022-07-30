@@ -445,6 +445,6 @@ if st.button('Generate'):
   output = Generate(input_text, length)
   output_Text = '<p style="font-family:"Times New Roman"; font-size: 14px;">' + output + '</p>'
   st.markdown(output_Text, unsafe_allow_html=True)
-
+  st.write("Finished.")
 
 
