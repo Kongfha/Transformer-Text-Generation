@@ -332,21 +332,18 @@ dropout_rate = 0.15
 
 
 
-@st.cache
-def load_model():
-  transformer = Transformer(
-    num_layers=num_layers,
-    d_model=d_model,
-    num_heads=num_heads,
-    dff=dff,
-    input_vocab_size=input_vocab,
-    target_vocab_size=output_vocab,
-    pe_input=1000,
-    pe_target=1000,
-    rate=dropout_rate)
-  return transformer
 
-transformer = load_model()
+transformer = Transformer(
+  num_layers=num_layers,
+  d_model=d_model,
+  num_heads=num_heads,
+  dff=dff,
+  input_vocab_size=input_vocab,
+  target_vocab_size=output_vocab,
+  pe_input=1000,
+  pe_target=1000,
+  rate=dropout_rate)
+
 ckpt = tf.train.Checkpoint(transformer=transformer)
 ckpt.restore("/app/transformer-text-generation/checkpoint/ckpt-3")
 
