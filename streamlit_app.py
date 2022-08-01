@@ -331,7 +331,7 @@ num_heads = 8
 dropout_rate = 0.15
 
 
-@st.cache(suppress_st_warning=True,ttl=60*60*2)
+@st.cache(suppress_st_warning=True,allow_output_mutation = True,ttl=60*60*2)
 def model_load():
   transformer = Transformer(
     num_layers=num_layers,
