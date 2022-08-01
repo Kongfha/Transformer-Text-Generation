@@ -344,12 +344,15 @@ def load_model():
     pe_input=1000,
     pe_target=1000,
     rate=dropout_rate)
-  ckpt = tf.train.Checkpoint(transformer=transformer)
-  ckpt.restore("/app/transformer-text-generation/checkpoint/ckpt-3")
   return transformer
 
+@st.cache
+def recall():
+  ckpt = tf.train.Checkpoint(transformer=transformer)
+  ckpt.restore("/app/transformer-text-generation/checkpoint/ckpt-3")
+
 transformer = load_model()
-  
+recall()
 
 #st.write("Checkpoint Recalling Finished.")
 
