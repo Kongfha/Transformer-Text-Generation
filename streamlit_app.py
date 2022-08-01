@@ -330,7 +330,11 @@ dff = 512
 num_heads = 8
 dropout_rate = 0.15
 
-transformer = Transformer(
+
+
+@st.cache
+def load_model():
+  transformer = Transformer(
     num_layers=num_layers,
     d_model=d_model,
     num_heads=num_heads,
@@ -340,9 +344,12 @@ transformer = Transformer(
     pe_input=1000,
     pe_target=1000,
     rate=dropout_rate)
+  ckpt = tf.train.Checkpoint(transformer=transformer)
+  ckpt.restore("/app/transformer-text-generation/checkpoint/ckpt-3")
+  return transformer
 
-ckpt = tf.train.Checkpoint(transformer=transformer)
-ckpt.restore("/app/transformer-text-generation/checkpoint/ckpt-3")
+transformer = load_model()
+  
 
 #st.write("Checkpoint Recalling Finished.")
 
