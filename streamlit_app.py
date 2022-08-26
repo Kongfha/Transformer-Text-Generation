@@ -454,13 +454,13 @@ if st.button('Generate'):
     placeholder2 = st.empty()
     disclaimer2 = "Please input times of the model to run in positive integer."
     dis_style2 = '<p style="font-family:"Times New Roman"; font-size: 18px;">' + disclaimer2 + '</p>'
-    placeholder2.markdown(dis_style, unsafe_allow_html=True)
+    placeholder2.markdown(dis_style2, unsafe_allow_html=True)
     placeholder2.empty()
   elif int(strlength) > 6 or int(strlength) <= 0:
     placeholder3 = st.empty()
     disclaimer3 = "Please input times of the model to run in positive integer in range of 1-5."
     dis_style3 = '<p style="font-family:"Times New Roman"; font-size: 18px;">' + disclaimer3 + '</p>'
-    placeholder3.markdown(dis_style, unsafe_allow_html=True)
+    placeholder3.markdown(dis_style3, unsafe_allow_html=True)
     placeholder3.empty()
   else :
     length = int(strlength)
