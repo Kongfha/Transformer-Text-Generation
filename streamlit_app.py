@@ -450,15 +450,23 @@ def Generate(sentence, length):
 input_text = st.text_input("Enter Initial text","")
 strlength = st.text_input("Please input times of the model to run (1 or 2 is recommended)","")
 if st.button('Generate'):
-  length = int(strlength)
-  placeholder = st.empty()
-  disclaimer = "Disclaimer : Generation may take a minute (can be up to 1-2 minutes) "
-  dis_style = '<p style="font-family:"Times New Roman"; font-size: 14px;">' + disclaimer + '</p>' + '<p style="font-family:"Times New Roman"; font-size: 14px;">' + "Generating..." + '</p>'
-  placeholder.markdown(dis_style, unsafe_allow_html=True)
-  output = Generate(input_text, length)
-  placeholder.empty()
-  st.write("Result:")
-  output_Text = '<p style="font-family:"Times New Roman"; font-size: 14px;">' + output + '</p>'
-  st.markdown(output_Text, unsafe_allow_html=True)
+  if !strlength.strip().isdigit():
+    placeholder = st.empty()
+    disclaimer = "Please input times of the model to run in positive integer."
+    dis_style = '<p style="font-family:"Times New Roman"; font-size: 18px;">' + disclaimer + '</p>'
+    placeholder.markdown(dis_style, unsafe_allow_html=True)
+    output = Generate(input_text, length)
+    placeholder.empty()
+  else :
+    length = int(strlength)
+    placeholder = st.empty()
+    disclaimer = "Disclaimer : Generation may take a minute (can be up to 1-2 minutes) "
+    dis_style = '<p style="font-family:"Times New Roman"; font-size: 14px;">' + disclaimer + '</p>' + '<p style="font-family:"Times New Roman"; font-size: 14px;">' + "Generating..." + '</p>'
+    placeholder.markdown(dis_style, unsafe_allow_html=True)
+    output = Generate(input_text, length)
+    placeholder.empty()
+    st.write("Result:")
+    output_Text = '<p style="font-family:"Times New Roman"; font-size: 14px;">' + output + '</p>'
+    st.markdown(output_Text, unsafe_allow_html=True)
   
 
