@@ -450,7 +450,7 @@ def Generate(sentence, length):
 input_text = st.text_input("Enter Initial text","")
 strlength = st.text_input("Please input times of the model to run (1 or 2 is recommended)","")
 if st.button('Generate'):
-  if !strlength.strip().isdigit():
+  if not(strlength.strip().isdigit()):
     placeholder = st.empty()
     disclaimer = "Please input times of the model to run in positive integer."
     dis_style = '<p style="font-family:"Times New Roman"; font-size: 18px;">' + disclaimer + '</p>'
