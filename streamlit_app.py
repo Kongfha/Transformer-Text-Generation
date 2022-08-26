@@ -1,13 +1,14 @@
 #Transformer codes was from : https://www.tensorflow.org/text/tutorials/transformer
 
 import streamlit as st
+st.header("Novel Generation by Transformer")
 import tensorflow as tf
 import numpy as np
 import pickle
 import os
 
 #os.environ['KMP_DUPLICATE_LIB_OK']='True'
-st.header("Novel Generation by Transformer")
+
 #st.write("System Initialize (may take a several time)")
 
 inp_tokenizer = pickle.load(open('inp_tokenizer','rb'))
