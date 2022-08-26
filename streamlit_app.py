@@ -453,9 +453,11 @@ if st.button('Generate'):
   if not(strlength.strip().isdigit()):
     disclaimer2 = "Please input times of the model to run in positive integer."
     st.write(disclaimer2)
+    st.write("Please try again.")
   elif int(strlength) > 6 or int(strlength) <= 0:
     disclaimer3 = "Please input times of the model to run in positive integer in range of 1-5."
     st.write(disclaimer3)
+    st.write("Please try again.")
   else :
     length = int(strlength)
     placeholder = st.empty()
