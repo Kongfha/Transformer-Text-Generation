@@ -1,14 +1,17 @@
 #Transformer codes was from : https://www.tensorflow.org/text/tutorials/transformer
 
 import streamlit as st
-st.header("Novel Generation by Transformer")
 import tensorflow as tf
 import numpy as np
 import pickle
 import os
 
 #os.environ['KMP_DUPLICATE_LIB_OK']='True'
-
+st.header("Novel Generation by Transformer")
+placeholder2 = st.empty()
+disclaimer2 = "Model Initializing... (May take a few seconds.)"
+dis_style2 = '<p style="font-family:"Times New Roman"; font-size: 14px;">' + disclaimer2 + '</p>' + '<p style="font-family:"Times New Roman"; font-size: 14px;">' + "Generating..." + '</p>'
+placeholder2.markdown(dis_style2, unsafe_allow_html=True)
 #st.write("System Initialize (may take a several time)")
 
 inp_tokenizer = pickle.load(open('inp_tokenizer','rb'))
@@ -332,7 +335,7 @@ num_heads = 8
 dropout_rate = 0.15
 
 
-@st.cache(suppress_st_warning=True,allow_output_mutation = True,ttl=60*60*2)
+#@st.cache(suppress_st_warning=True,allow_output_mutation = True,ttl=60*60*2)
 def model_load():
   transformer = Transformer(
     num_layers=num_layers,
@@ -441,6 +444,7 @@ def Generate(sentence, length):
     output = output + ' ' + i
   return output
 
+placeholder2.empty()
 #st.write("Generator initilization Finished.")
 
 input_text = st.text_input("Enter Initial text","")
