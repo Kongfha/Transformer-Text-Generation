@@ -5,8 +5,8 @@ While the model offers some promising results, it is important to note that it h
 
 The model's architecture utilizes Encoder-Decoder Transformer model, which is a state-of-the-art technique for various Natural Language Processing tasks, including text generation. With the ability to capture long-range dependencies and handle variable-length sequences, the Transformer model offers significant improvements in terms of both performance and efficiency.
 
-*The web application for this project can be accessed at:*
-https://kongfha-transformer-text-generation-streamlit-app-u8wpe1.streamlit.app/
+**The web application for this project can be accessed at:**
+*https://kongfha-transformer-text-generation-streamlit-app-u8wpe1.streamlit.app/*
 
 ![Image of the web application](https://github.com/Kongfha/Transformer-Text-Generation/blob/main/Screenshot%202566-02-17%20at%2021.11.50?raw=true)
 
