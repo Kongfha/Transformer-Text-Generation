@@ -7,6 +7,8 @@ The model's architecture utilizes Encoder-Decoder Transformer model, which is a 
 
 The web application for this project can be accessed at: https://kongfha-transformer-text-generation-streamlit-app-u8wpe1.streamlit.app/
 
+![Image of the web application](https://github.com/Kongfha/Transformer-Text-Generation/blob/main/Screenshot%202566-02-17%20at%2021.11.50?raw=true)
+
 By deploying this Text-Generation Model, we hope to offer a valuable tool for generating realistic and engaging text. However, we also want to remind users that the model has its limitations and should be used with caution. The generated text should always be carefully reviewed before publishing or sharing.
 
 
